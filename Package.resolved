@@ -2,6 +2,51 @@
   "object": {
     "pins": [
       {
+        "package": "Auth",
+        "repositoryURL": "https://github.com/vapor/auth.git",
+        "state": {
+          "branch": null,
+          "revision": "90868627c7587ea207c0b6d4054265e68f6a33ef",
+          "version": "2.0.1"
+        }
+      },
+      {
+        "package": "Cryptor",
+        "repositoryURL": "https://github.com/IBM-Swift/BlueCryptor.git",
+        "state": {
+          "branch": null,
+          "revision": "30b6cf38322838d1e973e0626c6abf9602b03cf5",
+          "version": "1.0.9"
+        }
+      },
+      {
+        "package": "Socket",
+        "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
+        "state": {
+          "branch": null,
+          "revision": "ce36f72f2c36b88f847de50c8c0ed8021ff80097",
+          "version": "1.0.16"
+        }
+      },
+      {
+        "package": "SSLService",
+        "repositoryURL": "https://github.com/IBM-Swift/BlueSSLService.git",
+        "state": {
+          "branch": null,
+          "revision": "a8e24ec6db452ed202502ebae885b39f43e34d98",
+          "version": "1.0.16"
+        }
+      },
+      {
+        "package": "CommonCrypto",
+        "repositoryURL": "https://github.com/IBM-Swift/CommonCrypto.git",
+        "state": {
+          "branch": null,
+          "revision": "9156d238dbc4c15455b77b45e721b2bb0b995e31",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "Console",
         "repositoryURL": "https://github.com/vapor/console.git",
         "state": {
@@ -15,8 +60,8 @@
         "repositoryURL": "https://github.com/vapor/core.git",
         "state": {
           "branch": null,
-          "revision": "7f56a09995bf3c8df562be456bdcda405d9d0678",
-          "version": "3.4.1"
+          "revision": "ad776ec35f0a811672128eaf796fb3de10a46d3f",
+          "version": "3.4.2"
         }
       },
       {
@@ -33,8 +78,8 @@
         "repositoryURL": "https://github.com/vapor/database-kit.git",
         "state": {
           "branch": null,
-          "revision": "7a01659316b9f033fa2150d5cd5e9d3c3e46c2e3",
-          "version": "1.3.0"
+          "revision": "3a17dbbe9be5f8c37703e4b7982c1332ad6b00c4",
+          "version": "1.3.1"
         }
       },
       {
@@ -47,12 +92,12 @@
         }
       },
       {
-        "package": "FluentSQLite",
-        "repositoryURL": "https://github.com/vapor/fluent-sqlite.git",
+        "package": "FluentMySQL",
+        "repositoryURL": "https://github.com/vapor/fluent-mysql.git",
         "state": {
           "branch": null,
-          "revision": "c32f5bda84bf4ea691d19afe183d40044f579e11",
-          "version": "3.0.0"
+          "revision": "2e2f6ea6a97d0b352cf55e6ec289dc1276a6b31a",
+          "version": "3.0.1"
         }
       },
       {
@@ -60,8 +105,35 @@
         "repositoryURL": "https://github.com/vapor/http.git",
         "state": {
           "branch": null,
-          "revision": "8123ea00e9858b369cd168d0303d33e7d3804d19",
-          "version": "3.0.7"
+          "revision": "f3641659867edfa7db1a939d1e38ece7f3766e25",
+          "version": "3.1.2"
+        }
+      },
+      {
+        "package": "JWT",
+        "repositoryURL": "https://github.com/vapor/jwt.git",
+        "state": {
+          "branch": null,
+          "revision": "2e225c722bf26407c1c4bd11d341e48759f46095",
+          "version": "3.0.0"
+        }
+      },
+      {
+        "package": "Leaf",
+        "repositoryURL": "https://github.com/vapor/leaf.git",
+        "state": {
+          "branch": null,
+          "revision": "fc6a3938b1c7cfa49dc6b06e54d84179bdf92810",
+          "version": "3.0.1"
+        }
+      },
+      {
+        "package": "LoggerAPI",
+        "repositoryURL": "https://github.com/IBM-Swift/LoggerAPI.git",
+        "state": {
+          "branch": null,
+          "revision": "5041f2673aa75d6e973d9b6bd3956bc5068387c8",
+          "version": "1.7.3"
         }
       },
       {
@@ -70,6 +142,15 @@
         "state": {
           "branch": null,
           "revision": "e57007c23a52b68e44ebdfc70cbe882a7c4f1ec3",
+          "version": "3.0.2"
+        }
+      },
+      {
+        "package": "MySQL",
+        "repositoryURL": "https://github.com/vapor/mysql.git",
+        "state": {
+          "branch": null,
+          "revision": "448f1ca28b3ea0f64a627bec22e5b0945d31b9f4",
           "version": "3.0.2"
         }
       },
@@ -101,21 +182,12 @@
         }
       },
       {
-        "package": "SQLite",
-        "repositoryURL": "https://github.com/vapor/sqlite.git",
-        "state": {
-          "branch": null,
-          "revision": "635ad49b2d6395b63462abffcce58ee38be1e4cc",
-          "version": "3.0.0"
-        }
-      },
-      {
         "package": "swift-nio",
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "695afc5205aaa49fca092b94b479ff71c43d9d3c",
-          "version": "1.8.0"
+          "revision": "f42c836ba58e3e38688acdb75df986dff02717f1",
+          "version": "1.9.4"
         }
       },
       {
@@ -146,12 +218,21 @@
         }
       },
       {
+        "package": "SwiftSMTP",
+        "repositoryURL": "https://github.com/IBM-Swift/Swift-SMTP",
+        "state": {
+          "branch": null,
+          "revision": "496f779a073991609cf3745214e49449d9b5db24",
+          "version": "5.1.0"
+        }
+      },
+      {
         "package": "TemplateKit",
         "repositoryURL": "https://github.com/vapor/template-kit.git",
         "state": {
           "branch": null,
-          "revision": "43b57b5861d5181b906ac6411d28645e980bb638",
-          "version": "1.0.1"
+          "revision": "db35b1c35aabd0f5db3abca0cfda7becfe9c43e2",
+          "version": "1.1.0"
         }
       },
       {
@@ -168,8 +249,8 @@
         "repositoryURL": "https://github.com/vapor/validation.git",
         "state": {
           "branch": null,
-          "revision": "ab6c5a352d97c8687b91ed4963aef8e7cfe0795b",
-          "version": "2.0.0"
+          "revision": "156f8adeac3440e868da3757777884efbc6ec0cc",
+          "version": "2.1.0"
         }
       },
       {

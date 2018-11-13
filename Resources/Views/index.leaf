@@ -1,0 +1,30 @@
+#set("content") {
+
+                <nav class="navbar navbar-transparent navbar-padded navbar-toggleable-sm">
+                    <button class="navbar-toggler navbar-toggler-right hidden-md-up" data-distance="-250" data-target="#stage" data-toggle="stage" type="button"><span class="navbar-toggler-icon"></span></button> 
+                    <a class="navbar-brand mr-auto" href=""><img class="logo" width="64px" src="images/logo.png" alt="Kamino"></a>
+                    <div class="hidden-sm-down text-uppercase">
+                        <ul class="navbar-nav">
+                            <li class="nav-item px-1">
+                                <a class="nav-link" href="#features">Features</a>
+                            </li>
+                            <li class="nav-item px-1">
+                                <a class="nav-link" href="#our-clients">Our clients</a>
+                            </li>
+                            <li class="nav-item px-1">
+                                <a class="nav-link" href="/pricing">Pricing</a>
+                            </li>
+                            
+                            <li class="nav-item px-1">
+                                <a class="nav-link" href="/login">Dashboard</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+            
+<h1>Welcome To Kamino</h1>
+<h1>Event Template System</h1>
+
+}
+#embed("base")

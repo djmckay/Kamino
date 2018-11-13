@@ -1,0 +1,18 @@
+#set("content") {
+<h1>#(event.name)</h1>
+<p class="intro">#formatDate(event.startDate, "MMMM dd, yyyy") - #formatDate(event.endDate, "MMMM dd, yyyy") @ #(event.locationName)</p>
+
+<p>Created by <a href="/events/users/#(user.id)/">#(user.name)</a></p>
+ <div class="avatar-upload">
+<div class="avatar-preview">
+<div id="imagePreview" #if(event.logoFilename) { style="background-image: url(#(event.logoFilename));"}>
+            </div>
+            </div></div>
+<form method="post" action="/events/#(event.id)/delete">
+  <a class="btn btn-primary" href="/events/#(event.id)/edit" role="button">Edit</a>&nbsp;
+  <input class="btn btn-danger" type="submit" value="Delete" />
+</form>
+<h1>Event Registration Form Template</h1>
+#embed("eventRegistrationForms/registrationForm")
+}
+#embed("base")

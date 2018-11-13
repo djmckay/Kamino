@@ -1,0 +1,44 @@
+#set("content") {
+
+  #if(loginError) {
+    <div class="alert alert-danger" role="alert">
+      User authentication error. Either your username or password was invalid.
+    </div>
+  }
+
+<div class="container">
+  <h1>#(title)</h1>
+<div class="creds">
+<div class="logo">
+            <img src="/images/logo.png" width="64px">
+        </div>
+        
+  <form class="card card-block bg-faded"  method="post">
+  
+    <div class="form-group">
+    <div class="input-with-icon">
+      <input type="text" name="username" class="form-control" id="username" placeholder="Email"/>
+      <span class="icon icon-user"></span>
+     </div>
+  </div>
+
+  <div class="form-group">
+      <div class="input-with-icon">
+      <input type="password" name="password" class="form-control" id="password" placeholder="Password"/>
+      <span class="icon icon-key"></span>
+     </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block">Log In</button>
+  
+  <div class="form-group" style="text-align: center;">
+                <p><a href="/signup">Signup</a> for an account</p>
+                <p><a href="/request-password-reset">Reset password</a></p>
+            </div>
+            
+  </form>
+  </div>
+  </div>
+}
+
+#embed("base")

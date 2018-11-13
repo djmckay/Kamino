@@ -1,0 +1,49 @@
+#set("content") {
+
+<h1>My Team</h1>
+
+#if(count(users) > 0) {
+<table class="table table-bordered table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th>
+        Username
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Options
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    #for(otheruser in users) {
+    <tr>
+      <td>
+        <a href="/users/#(user.id)">
+          #(otheruser.username)
+        </a>
+        #if(user.id == otheruser.id){(me)}
+      </td>
+      <td>#(otheruser.name)</td>
+      <td>
+        <a class="btn btn-primary" href="/events/users/#(otheruser.id)">
+
+          Events
+        </a>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+} else {
+<h2>There aren't any users yet!</h2>
+}
+#if(user.isOrganizer) {
+<a class="btn btn-secondary" href="/users/create" class="nav-link">Add User</a>
+}
+
+}
+
+#embed("base")

@@ -6,10 +6,16 @@ public func routes(_ router: Router) throws {
     router.get("hello") { req in
         return "Hello, world!"
     }
-
-    // Example of configuring a controller
-    let todoController = TodoController()
-    router.get("todos", use: todoController.index)
-    router.post("todos", use: todoController.create)
-    router.delete("todos", Todo.parameter, use: todoController.delete)
+    //api endpoints
+    let usersController = UsersController()
+    try router.register(collection: usersController)
+    try router.register(collection:  ZonesController())
+    try router.register(collection:  CountryController())
+    try router.register(collection: AccountController())
+    try router.register(collection: KaminoAttendeeFormController())
+    
+    //website
+    let websiteController = WebsiteController()
+    try router.register(collection: websiteController)
+    try router.register(collection:  WebsiteEventController())
 }

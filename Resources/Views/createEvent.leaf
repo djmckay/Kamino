@@ -1,0 +1,163 @@
+#set("content") {
+<script src="/scripts/createEvent.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+#if(message) {
+    <div class="alert alert-danger" role="alert">
+      #(message)
+    </div>
+  }
+<form class="card card-block bg-faded" method="post" enctype="multipart/form-data">
+#if(csrfToken) {
+<input type="hidden" name="csrfToken" value="#(csrfToken)">
+}
+  <div class="form-group">
+  <span class="has-float-label">
+    <input type="text" name="name" class="form-control" value="#(data.name)"
+     id="name"/>
+         <label for="name">Event Name</label>
+
+     </span>
+     <div class="alert alert-danger" #showIfFieldHasErrors(fieldset, "name") role="alert">
+    #valueForField(fieldset, "name")
+  </div>
+  </div>
+  
+  <div class="form-group">
+  <span class="has-float-label">
+    <label for="startDate">Start Date</label>
+    <input type="date" name="startDate" class="form-control" value="#(data.startDate)" placeholder="Start Date"
+     id="startDate"/>
+     </span>
+  </div>
+  
+  <div class="form-group">
+  <span class="has-float-label">
+    <label for="endDate">End Date</label>
+    <input type="date" name="endDate" class="form-control" value="#(data.endDate)" placeholder="End Date"
+     id="endDate"/>
+     </span>
+     <div class="alert alert-danger" #showIfFieldHasErrors(fieldset, "endDate") role="alert">
+    #valueForField(fieldset, "endDate")
+  </div>
+  </div>
+
+  <div class="form-group">
+  <span class="has-float-label">
+    <label for="password">Event Password</label>
+    <input type="text" name="password" class="form-control" value="#(data.password)"
+     id="password"/>
+     </span>
+     <div class="alert alert-danger" #showIfFieldHasErrors(fieldset, "password") role="alert">
+    #valueForField(fieldset, "password")
+  </div>
+  </div>
+
+  <div class="form-group">
+  <span class="has-float-label">
+    <label for="confirmPassword">Confirm Event Password</label>
+    <input type="text" name="confirmPassword"
+     class="form-control" id="confirmPassword" value="#(data.confirmPassword)"/>
+     </span>
+     <div class="alert alert-danger" #showIfFieldHasErrors(fieldset, "password") role="alert">
+    #valueForField(fieldset, "password")
+  </div>
+  </div>
+  
+  <div class="form-group">
+  <span class="has-float-label">
+    <label for="locationName">Event Location Name</label>
+    <input type="text" name="locationName" class="form-control" value="#(data.locationName)"
+     id="locationName"/>
+     </span>
+  </div>
+
+<div class="form-group">
+<span class="has-float-label">
+    <label for="locationAddress">Event Location Address</label>
+    <input type="text" name="locationAddress" class="form-control" value="#(data.locationAddress)"
+     id="locationAddress"/>
+     </span>
+  </div>
+  
+  <div class="form-group">
+  <span class="has-float-label">
+    <label for="locationAddressLine2">Event Location Address Line 2</label>
+    <input type="text" name="locationAddressLine2" class="form-control" value="#(data.locationAddressLine2)"
+     id="locationAddressLine2"/>
+     </span>
+  </div>
+  
+  <div class="form-group">
+  <span class="has-float-label">
+    <label for="locationCity">Event Location City</label>
+    <input type="text" name="locationCity" class="form-control" value="#(data.locationCity)"
+     id="locationCity"/>
+     </span>
+  </div>
+  
+<div class="form-group">
+<label hidden for="locationCountry">Country</label>
+<select name="locationCountry" class="form-control" id="locationCountry" >
+#if(editing) {
+<option value="#(data.locationCountry)" selected="selected" >
+#(data.locationCountry)</option>
+} else {
+<option  selected="selected" >
+Select Country
+</option>
+}
+
+
+</select>
+</div>
+
+<script type="text/javascript">
+
+</script>
+
+<div class="form-group" id="locationStateBox">
+
+<label for="locationState">Region/State</label>
+
+
+<select name="locationState" class="form-control" id="locationState"  >
+
+
+</select>
+
+</div>
+<input type="hidden" name="previousLocationState" class="form-control" #if(editing) { value="#(data.locationState)" } else { value="" }
+     id="previousLocationState"/>
+<div class="form-group">
+<span class="has-float-label">
+    <label for="locationPostalCode">Event Location Postal Code</label>
+    <input type="text" name="locationPostalCode" class="form-control" value="#(data.locationPostalCode)"
+     id="locationPostalCode"/>
+     </span>
+  </div>
+
+  
+  <div class="form-group">
+    <h4>Event Logo
+    </h4>
+    <div class="avatar-upload">
+        <div class="avatar-edit">
+            <input type='file' id="logo" class="form-control" accept=".png, .jpg, .jpeg" name="logo" />
+            <label for="logo"></label>
+        </div>
+        <div class="avatar-preview">
+        
+            <div id="imagePreview" #if(data.logoFilename) { style="background-image: url(#(data.logoFilename));"}>
+            </div>
+        </div>
+    </div>
+</div>
+  <button type="submit" class="btn btn-primary">
+    #if(editing){Update Event} else{Create Event}
+  </button>
+</form>
+}
+
+
+#embed("base")
