@@ -16,7 +16,7 @@ let package = Package(
         //.package(url: "https://github.com/IBM-Swift/Swift-SMTP", .upToNextMinor(from: "5.1.0")),   
     ],
     targets: [
-        .target(name: "App", dependencies: ["FluentMySQL", "Vapor", "Leaf", "Authentication", "JWT", "SwiftSMTP"]),
+        .target(name: "App", dependencies: ["FluentMySQL", "Vapor", "Leaf", "Authentication", "JWT"]),
         .target(name: "Run", dependencies: ["App"]),
         .testTarget(name: "AppTests", dependencies: ["App"])
     ]
