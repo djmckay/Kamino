@@ -16,7 +16,7 @@ final class Country: MySQLModel {
     
     
     var id: Int?
-    var name: String
+    var name: String?
     var iso_code_2: String
     var iso_code_3: String
     var address_format: String
