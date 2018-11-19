@@ -130,7 +130,7 @@ struct WebsiteEventController: RouteCollection {
         if let submittedData = data.logo {
             if !submittedData.isEmpty {
                 let data = MultipartPart(data: submittedData)
-                let logo = Data(bytes: data.data)
+                let logo = data.data
                 
                 let directory = DirectoryConfig.detect()
                 let workingDirectory = directory.workDir
