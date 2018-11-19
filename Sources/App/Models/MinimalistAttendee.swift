@@ -14,13 +14,18 @@ final class MinimalistAttendee: KaminoModel {
     var id: UUID?
     var firstname: String
     var lastName: String
-    var email: String
-    var phone: String
-    var organization: String
+    var email: String?
+    var phone: String?
+    var organization: String?
     var eventId: Event.ID
     var createdAt: Date?
     var updatedAt: Date?
     
+    init(firstname: String, lastName: String, eventId: Event.ID) {
+        self.firstname = firstname
+        self.lastName = lastName
+        self.eventId = eventId
+    }
     typealias Public = MinimalistAttendee
 }
 

@@ -23,11 +23,21 @@ final class Country: MySQLModel {
     var postcode_required: Bool = false
     var status: Bool
     
+    init(name: String, iso_code_2: String, iso_code_3: String, address_format: String, postcode_required: Bool, status: Bool) {
+        self.name = name
+        self.iso_code_2 = iso_code_2
+        self.iso_code_3 = iso_code_3
+        self.address_format = address_format
+        self.postcode_required = postcode_required
+        self.status = status
+        
+    }
     func convertToPublic() -> Country {
         return self
     }
     
 }
+
 
 extension Country: Content {}
 extension Country: Migration {}
