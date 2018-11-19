@@ -21,7 +21,7 @@ final class Zone: MySQLModel {
     var code: String
     var status: Bool
     
-    init(country_id: Count.ID, name: String, code: String, status: Bool) {
+    init(country_id: Country.ID, name: String, code: String, status: Bool) {
         self.country_id = country_id
         self.name = name
         self.code = code
