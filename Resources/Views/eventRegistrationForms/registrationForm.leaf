@@ -1,0 +1,34 @@
+<script src="/scripts/createRegistrationForm.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+#if(message) {
+  <div class="alert alert-danger" role="alert">
+    #(message)
+  </div>
+}
+
+<form class="card card-block bg-faded" method="post" enctype="multipart/form-data" #if(data.action != null) { action="#(data.action)" }>
+#if(csrfToken) {
+<input type="hidden" name="csrfToken" value="#(csrfToken)">
+}
+  
+ #embed("eventRegistrationForms/#(form)")
+
+  
+    #if(!building){
+
+  <button type="submit" class="btn btn-primary" >
+    #if(editing){Update} else{Register}
+  </button>
+      } else {
+      <button type="submit" class="btn btn-primary" >
+    Save Form
+  </button>
+  <a class="btn" href="/events/#(event.id)/registrationForm" role="button">Select New Form</a>&nbsp;
+  }
+
+</form>
+
+
+

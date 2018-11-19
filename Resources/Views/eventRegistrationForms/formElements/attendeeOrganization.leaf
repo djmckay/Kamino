@@ -1,0 +1,28 @@
+<div class="form-group">
+  <span class="has-float-label">
+    <label for="attendeeOrganization">Attendee Organization</label>
+    <input type="text" name="attendeeOrganization" class="form-control" value="#(data.attendeeOrganization)"
+     id="attendeeOrganization"/>
+     </span>
+     #set("elementName") {attendeeOrganization}
+     #embed("eventRegistrationForms/formElements/formHandling") 
+     <!-- 
+<div class="form-group">
+       <label for="attendeeOrganizationHanding">Organization Field Handling:</label>
+
+		 <div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeeOrganizationRequired" name="attendeeOrganizationHanding">
+		  <label class="custom-control-label" for="attendeeOrganizationRequired" selected>Required</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeeOrganizationOptional" name="attendeeOrganizationHanding">
+		  <label class="custom-control-label" for="attendeeOrganizationOptional">Optional</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeeOrganizationHide" name="attendeeOrganizationHanding">
+		  <label class="custom-control-label" for="attendeeOrganizationHide">Hide</label>
+		</div>
+	</div>
+ -->
+     
+  </div>

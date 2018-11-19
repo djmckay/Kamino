@@ -5,13 +5,13 @@
                     <a class="navbar-brand mr-auto" href=""><img class="logo" width="64px" src="images/logo.png" alt="Kamino"></a>
                     <div class="hidden-sm-down text-uppercase">
                         <ul class="navbar-nav">
-                            <li class="nav-item px-1">
+                            <li class="nav-item px-1 hidden">
                                 <a class="nav-link" href="#features">Features</a>
                             </li>
-                            <li class="nav-item px-1">
+                            <li class="nav-item px-1 hidden">
                                 <a class="nav-link" href="#our-clients">Our clients</a>
                             </li>
-                            <li class="nav-item px-1">
+                            <li class="nav-item px-1 hidden">
                                 <a class="nav-link" href="/pricing">Pricing</a>
                             </li>
                             

@@ -1,0 +1,14 @@
+ <div class="form-group">
+
+<div id="locationStateBox">
+
+<label for="locationState">Region/State</label>
+
+
+<select name="locationState" class="form-control" id="locationState"  >
+
+
+</select>
+
+</div>
+</div>

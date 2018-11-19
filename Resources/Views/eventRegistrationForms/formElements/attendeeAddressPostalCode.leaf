@@ -1,0 +1,8 @@
+ <div class="form-group">
+
+<span class="has-float-label">
+    <label for="locationPostalCode">Attendee Postal Code</label>
+    <input type="text" name="locationPostalCode" class="form-control" value="#(data.locationPostalCode)"
+     id="locationPostalCode"/>
+     </span>
+     </div>

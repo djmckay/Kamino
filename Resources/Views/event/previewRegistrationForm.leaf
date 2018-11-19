@@ -1,0 +1,15 @@
+#set("content") {
+
+<script src="/scripts/previewRegistrationForm.js"></script>
+
+<h1>Event Registration Form Preview</h1>
+  <a class="btn btn-primary" href="/events/#(event.id)/registrationForm" role="button">Back</a>&nbsp;
+
+<div class="card card-block bg-faded">
+#embed("eventRegistrationForms/basic")
+</div>
+<form method="post">
+  <a class="btn btn-primary" href="/events/#(event.id)/edit" role="button">Use</a>&nbsp;
+</form>
+}
+#embed("base")

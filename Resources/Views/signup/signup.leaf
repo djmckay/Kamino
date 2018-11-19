@@ -1,0 +1,88 @@
+#set("content") {
+#if(userLoggedIn) {
+<h1>Thanks for signing up!</h1>
+<a href="/event/create">Create an Event</a>
+} else {
+
+#if(message) {
+  <div class="alert alert-danger" role="alert">
+    Please fix the following errors:<br />
+    #(message)
+  </div>
+}
+<div class="container">
+<h1>#(title)</h1>
+
+<div class="creds">
+<div class="logo">
+            <img src="/images/logo.png" width="64px">
+        </div>
+<form class="card card-block bg-faded"  method="post">
+  <div class="form-group">
+    <div class="input-with-icon">
+
+    <input type="text" name="name" class="form-control" value="#(data.name)" placeholder="Name"
+     id="name"/>
+     <span class="icon icon-user"></span>
+     </div>
+
+  </div>
+
+  <div class="form-group">
+    <div class="input-with-icon">
+<input type="text" name="username" class="form-control" value="#(data.username)" placeholder="Email"
+     id="username"/>
+     <span class="icon icon-mail"></span>
+     </div>
+<div class="alert alert-danger" #showIfFieldHasErrors(fieldset, "username") role="alert">
+#valueForField(fieldset, "username")
+</div>
+  </div>
+
+<div class="form-group">
+<div class="input-with-icon">
+<input type="text" name="organization" class="form-control" value="#(data.organization)" placeholder="Organization"
+id="organization"/>
+<span class="icon icon-users"></span>
+     </div>
+</div>
+
+  <div class="form-group">
+    <div class="input-with-icon">
+    <input type="password" name="password" class="form-control" placeholder="Password"
+     id="password"/>
+     <span class="icon icon-key"></span>
+     </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-with-icon">
+    <input type="password" name="confirmPassword" placeholder="Confirm Password"
+     class="form-control" id="confirmPassword"/>
+     <span class="icon icon-key"></span>
+     </div>
+     
+  </div>
+<div class="form-check">
+                    <label class="form-check-label">
+                    <input type="checkbox" name="agree" value="1" class="form-check-input">
+                        I agree to the <a target="_blank" href="">Terms and Conditions</a>
+                    </label>
+                </div>
+                
+                <input type="hidden" name="inviteToken" value="#(data.inviteToken)">
+                
+  <button type="submit" class="btn btn-primary btn-block">
+    Create Account
+  </button>
+  <div class="form-group" style="text-align: center;">
+                <p>Back to <a href="/login">login</a></p>
+            </div>
+</form>
+
+</div>
+</div>
+}
+}
+
+#embed("base")

@@ -1,0 +1,6 @@
+
+#embed("eventRegistrationForms/formElements/attendeeNameFirstLast")
+
+#embed("eventRegistrationForms/formElements/attendeeEmail")
+
+  

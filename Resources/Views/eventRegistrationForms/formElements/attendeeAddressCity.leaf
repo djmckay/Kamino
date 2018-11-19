@@ -1,0 +1,8 @@
+ <div class="form-group">
+
+<span class="has-float-label">
+    <label for="locationCity">Attendee City</label>
+    <input type="text" name="locationCity" class="form-control" value="#(data.locationCity)"
+     id="locationCity"/>
+     </span>
+     </div>

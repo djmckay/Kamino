@@ -1,0 +1,16 @@
+ <div class="form-group">
+
+<label hidden for="locationCountry">Country</label>
+<select name="locationCountry" class="form-control" id="locationCountry" #if(multiple){multiple="multiple"}>
+#if(editing) {
+<option value="#(data.locationCountry)" selected="selected" >
+#(data.locationCountry)</option>
+} else {
+<option  selected="selected" >
+Select Country
+</option>
+}
+
+
+</select>
+</div>

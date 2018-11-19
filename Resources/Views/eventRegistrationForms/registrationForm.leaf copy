@@ -1,0 +1,195 @@
+<script src="/scripts/createRegistrationForm.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+#if(message) {
+  <div class="alert alert-danger" role="alert">
+    #(message)
+  </div>
+}
+
+<form class="card card-block bg-faded" method="post" enctype="multipart/form-data" #if(data.action != null) { action="#(data.action)" }>
+#if(csrfToken) {
+<input type="hidden" name="csrfToken" value="#(csrfToken)">
+}
+  
+  <div class="form-group">
+  <span class="has-float-label">
+    <label for="password">Event Password</label>
+    <input type="text" name="password" class="form-control" value=""
+     id="password"/>
+     </span>
+  </div>
+
+  
+  <div class="form-group">
+  <span class="has-float-label">
+    <label class="has-float-label" for="attendeeFirstName">Attendee First Name</label>
+    <input type="text" name="attendeeFirstName" class="form-control" value="#(data.attendeeFirstName)" 
+     id="attendeeFirstName"/>
+     </span>
+     
+  </div>
+
+<div class="form-group">
+  <span class="has-float-label">
+    <label for="attendeeLastName">Attendee Last Name</label>
+    <input type="text" name="attendeeLastName" class="form-control" value="#(data.attendeeLastName)"
+     id="attendeeLastName"/>
+     </span>
+  </div>
+  
+  <div class="form-group">
+  <span class="has-float-label">
+    <label for="attendeeEmail">Attendee Email</label>
+    <input type="text" name="attendeeEmail" class="form-control" value="#(data.attendeeEmail)"
+     id="attendeeEmail"/>
+     </span>
+  </div>
+  
+  <div class="form-group">
+  <span class="has-float-label">
+    <label for="attendeePhone">Attendee Phone</label>
+    <input type="text" name="attendeePhone" class="form-control" value="#(data.attendeePhone)"
+     id="attendeePhone"/>
+     </span>
+     
+     <div class="form-group">
+       <label for="attendeePhoneHandling">Phone Field Handling:</label>
+
+		 <div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeePhoneRequired" name="attendeePhoneHandling" #if(data.attendeePhoneHandling) == "Required" {selected}>
+		  <label class="custom-control-label" for="attendeePhoneRequired">Required</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeePhoneOptional" name="attendeePhoneHandling" #if(data.attendeePhoneHandling) == "Optional" {selected}>
+		  <label class="custom-control-label" for="attendeePhoneOptional">Optional</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeePhoneHide" name="attendeePhoneHandling" #if(data.attendeePhoneHandling) == "Hide" {selected}>
+		  <label class="custom-control-label" for="attendeePhoneHide">Hide</label>
+		</div>
+	</div>
+     
+  </div>
+  
+  <div class="form-group">
+  <span class="has-float-label">
+    <label for="attendeeOrganization">Attendee Organization</label>
+    <input type="text" name="attendeeOrganization" class="form-control" value="#(data.attendeeOrganization)"
+     id="attendeeOrganization"/>
+     </span>
+     
+     <div class="form-group">
+       <label for="attendeeOrganizationHanding">Organization Field Handling:</label>
+
+		 <div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeeOrganizationRequired" name="attendeeOrganizationHanding">
+		  <label class="custom-control-label" for="attendeeOrganizationRequired" selected>Required</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeeOrganizationOptional" name="attendeeOrganizationHanding">
+		  <label class="custom-control-label" for="attendeeOrganizationOptional">Optional</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeeOrganizationHide" name="attendeeOrganizationHanding">
+		  <label class="custom-control-label" for="attendeeOrganizationHide">Hide</label>
+		</div>
+	</div>
+     
+  </div>
+  
+<div class="form-group card card-block">
+<div class="form-group">
+  <label for="attendeeAddressHandling">All Address Fields Handling:</label>
+
+		 <div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeeAddressRequired" name="attendeeAddressHandling">
+		  <label class="custom-control-label" for="attendeeAddressRequired">Required</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeeAddressOptional" name="attendeeAddressHandling">
+		  <label class="custom-control-label" for="attendeeAddressOptional">Optional</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeeAddressHide" name="attendeeAddressHandling">
+		  <label class="custom-control-label" for="attendeeAddressHide">Hide</label>
+		</div>
+		</div>
+<span class="has-float-label">
+    <label for="locationAddress">Attendee Address</label>
+    <input type="text" name="locationAddress" class="form-control" value="#(data.locationAddress)"
+     id="locationAddress"/>
+     </span>
+     
+     
+  
+  <span class="has-float-label">
+    <label for="locationAddressLine2">Attendee Address Line 2</label>
+    <input type="text" name="locationAddressLine2" class="form-control" value="#(data.locationAddressLine2)"
+     id="locationAddressLine2"/>
+     </span>
+  
+  <span class="has-float-label">
+    <label for="locationCity">Attendee City</label>
+    <input type="text" name="locationCity" class="form-control" value="#(data.locationCity)"
+     id="locationCity"/>
+     </span>
+  
+<label hidden for="locationCountry">Country</label>
+<select name="locationCountry" class="form-control" id="locationCountry" multiple="multiple">
+#if(editing) {
+<option value="#(data.locationCountry)" selected="selected" >
+#(data.locationCountry)</option>
+} else {
+<option  selected="selected" >
+Select Country
+</option>
+}
+
+
+</select>
+
+<script type="text/javascript">
+
+</script>
+
+<div id="locationStateBox">
+
+<label for="locationState">Region/State</label>
+
+
+<select name="locationState" class="form-control" id="locationState"  >
+
+
+</select>
+
+</div>
+<input type="hidden" name="previousLocationState" class="form-control" #if(editing) { value="#(data.locationState)" } else { value="" }
+     id="previousLocationState"/>
+<span class="has-float-label">
+    <label for="locationPostalCode">Attendee Postal Code</label>
+    <input type="text" name="locationPostalCode" class="form-control" value="#(data.locationPostalCode)"
+     id="locationPostalCode"/>
+     </span>
+  
+  
+	</div>
+
+  
+    #if(!building){
+
+  <button type="submit" class="btn btn-primary" >
+    #if(editing){Update} else{Register}
+  </button>
+      } else {
+      <button type="submit" class="btn btn-primary" >
+    Save Form
+  </button>
+  <a class="btn" href="/events/#(event.id)/registrationForm" role="button">Select New Form</a>&nbsp;
+  }
+
+</form>
+
+
+

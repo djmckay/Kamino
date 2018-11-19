@@ -1,0 +1,16 @@
+<div class="form-group">
+       <label for="#(elementName)Handing">#(elementTitle) Special Handling Rules:</label>
+
+		 <div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="#(elementName)Required" name="#(elementName)Handing">
+		  <label class="custom-control-label" for="#(elementName)Required" selected>Required</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="#(elementName)Optional" name="#(elementName)Handing">
+		  <label class="custom-control-label" for="#(elementName)Optional">Optional</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="#(elementName)Hide" name="#(elementName)Handing">
+		  <label class="custom-control-label" for="#(elementName)Hide">Hide</label>
+		</div>
+	</div>

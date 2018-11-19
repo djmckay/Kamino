@@ -1,0 +1,28 @@
+<div class="form-group">
+  <span class="has-float-label">
+    <label for="attendeePhone">Attendee Phone</label>
+    <input type="text" name="attendeePhone" class="form-control" value="#(data.attendeePhone)"
+     id="attendeePhone"/>
+     </span>
+     #set("elementName") {attendeePhone}
+     #embed("eventRegistrationForms/formElements/formHandling") 
+     <!-- 
+<div class="form-group">
+       <label for="attendeePhoneHandling">Phone Field Handling:</label>
+
+		 <div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeePhoneRequired" name="attendeePhoneHandling" #if(data.attendeePhoneHandling) == "Required" {selected}>
+		  <label class="custom-control-label" for="attendeePhoneRequired">Required</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeePhoneOptional" name="attendeePhoneHandling" #if(data.attendeePhoneHandling) == "Optional" {selected}>
+		  <label class="custom-control-label" for="attendeePhoneOptional">Optional</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeePhoneHide" name="attendeePhoneHandling" #if(data.attendeePhoneHandling) == "Hide" {selected}>
+		  <label class="custom-control-label" for="attendeePhoneHide">Hide</label>
+		</div>
+	</div>
+ -->
+     
+  </div>

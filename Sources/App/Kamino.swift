@@ -11,9 +11,9 @@ import FluentMySQL
 
 struct Kamino {
     static fileprivate let DatabaseHost: String = Environment.get("DATABASE_HOSTNAME") ?? "10.0.1.9"
-    static fileprivate let DatabaseUsername: String = Environment.get("DATABASE_USER") ?? "iamwire_carolyne"
+    static fileprivate let DatabaseUsername: String = Environment.get("DATABASE_USER") ?? "user"
     static let DatabaseName: String = Environment.get("DATABASE_DB") ?? "Coruscant"
-    static fileprivate let DatabasePassword: String = Environment.get("DATABASE_PASSWORD") ?? "carolyne"
+    static fileprivate let DatabasePassword: String = Environment.get("DATABASE_PASSWORD") ?? "pword"
     
     static let CoruscantConfig = MySQLDatabaseConfig(hostname: DatabaseHost, port: 3306, username: DatabaseUsername, password: DatabasePassword, database: DatabaseName)
     static let Coruscant = MySQLDatabase(config: CoruscantConfig)

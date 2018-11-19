@@ -1,0 +1,44 @@
+#set("elementName") {attendeeAddress}
+#set("elementTitle") {All Address Fields}
+     #embed("eventRegistrationForms/formElements/formHandling") 
+<!-- 
+<div class="form-group">
+  <label for="attendeeAddressHandling">All Address Fields Handling:</label>
+
+		 <div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeeAddressRequired" name="attendeeAddressHandling">
+		  <label class="custom-control-label" for="attendeeAddressRequired">Required</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeeAddressOptional" name="attendeeAddressHandling">
+		  <label class="custom-control-label" for="attendeeAddressOptional">Optional</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+		  <input type="radio" class="custom-control-input" id="attendeeAddressHide" name="attendeeAddressHandling">
+		  <label class="custom-control-label" for="attendeeAddressHide">Hide</label>
+		</div>
+		</div>
+ -->
+#embed("eventRegistrationForms/formElements/attendeeAddressLine1")
+
+#embed("eventRegistrationForms/formElements/attendeeAddressLine2")
+ 
+#embed("eventRegistrationForms/formElements/attendeeAddressCity")
+  
+#embed("eventRegistrationForms/formElements/attendeeAddressCountry")
+
+
+<script type="text/javascript">
+
+</script>
+
+#embed("eventRegistrationForms/formElements/attendeeAddressState")
+
+
+<input type="hidden" name="previousLocationState" class="form-control" #if(editing) { value="#(data.locationState)" } else { value="" }
+     id="previousLocationState"/>
+     
+#embed("eventRegistrationForms/formElements/attendeeAddressPostalCode")
+
+  
+  

@@ -1,0 +1,47 @@
+#set("content") {
+
+<h1>#(title)</h1>
+<h1>#(account.name)</h1>
+#if(title != "All Team Events") {
+<h4>Team Member: #(user.username)</h4>
+} else {
+}
+#if(count(events) > 0) {
+<table class="table table-bordered table-hover">
+<thead class="thead-light">
+<tr>
+<th>
+Name
+</th>
+<th>
+Options
+</th>
+</tr>
+</thead>
+<tbody>
+#for(event in events) {
+<tr>
+<td>
+<a href="/events/#(event.id)">
+#(event.name)
+</a>
+</td>
+<td>
+<form method="post" action="/events/#(event.id)/delete">
+  <a class="btn btn-primary" href="/events/#(event.id)/edit" role="button">Edit</a>&nbsp;
+
+  <input class="btn btn-danger" type="submit" value="Delete" />
+</form>
+</td>
+</tr>
+}
+</tbody>
+</table>
+<a class="btn btn-primary" href="/events/create" class="nav-link">New Event</a>
+} else {
+<h2>There aren't any events yet!</h2>
+}
+}
+
+#embed("base")
+

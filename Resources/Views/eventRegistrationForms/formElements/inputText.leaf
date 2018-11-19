@@ -1,0 +1,8 @@
+<div class="form-group">
+  <span class="has-float-label">
+    <label class="has-float-label" for="#(elementName)">#(elementLabel)</label>
+    <input type="text" name="#(elementName)" class="form-control" value="#(dataName)" 
+     id="#(elementName)"/>
+     </span>
+     
+  </div>

@@ -1,0 +1,81 @@
+#set("content") {
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+#if(message) {
+  <div class="alert alert-danger" role="alert">
+    #(message)
+  </div>
+}
+
+<!-- 
+<h1>Current Event Registration Form Template</h1>
+<div class="card card-block bg-faded">
+
+<form method="post">
+  <input class="btn btn-primary" type="submit" value="Select" />
+</form>
+</div>
+ -->
+  <a class="btn btn-primary" href="/events/#(event.id)" role="button">Back</a>&nbsp;
+
+<h1>Starter Event Registration Form Templates</h1>
+<div class="card card-block bg-faded">
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+
+
+  <ol class="carousel-indicators">
+   #for(form in forms) {
+    <li data-target="#carouselExampleIndicators" data-slide-to="#(index)" #if(isFirst) {class="active"}></li>
+    }
+
+  </ol>
+
+  <div class="carousel-inner bg-dark">
+  
+  #for(form in forms) {
+  
+  <div class="carousel-item #if(isFirst) { active } regForm">
+
+    <div class="card card-block"  >
+    <h5>#(form.description)</h5>
+#embed("eventRegistrationForms/#(form.name)")
+</div>
+
+    </div>
+  
+  }
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon-dark" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon-dark" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+
+</div>
+
+<div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+<a href="#carouselExampleIndicators" class="btn btn-secondary btn-sm" role="button" aria-disabled="true" data-slide="prev">Previous</a>
+<a href="#carouselExampleIndicators" class="btn btn-secondary btn-sm" role="button" aria-disabled="true" data-slide="next">Next</a>
+</div>
+</div>
+<br>
+<form method="post">
+  <input class="btn btn-primary" type="submit" value="Preview" />
+</form>
+</div>
+
+}
+#embed("base")
+<style type="text/css">
+.regForm {
+min-height: 1200px;
+}
+
+</style>
