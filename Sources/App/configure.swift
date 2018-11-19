@@ -10,9 +10,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     try services.register(LeafProvider())
     services.register(KaminoErrorMiddleware.self)
     services.register(PrivateFileMiddleware.self)
-    let mailConfig = MailgunConfig(apiKey: "SG.something")
-    services.register(mailConfig)
-    try services.register(MailgunProvider())
+    
     services.register { container -> LeafTagConfig in
         var config = LeafTagConfig.default()
         config.use(DateFormat(), as: "formatDate")
