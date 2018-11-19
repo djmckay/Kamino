@@ -68,7 +68,6 @@ public final class KaminoErrorMiddleware: Middleware, ServiceType {
             
             // create a Response with appropriate status
             let res = req.makeResponse(http: .init(status: status, headers: headers))
-            
             // attempt to serialize the error to json
             do {
                 let errorResponse = ErrorResponse(error: true, reason: reason)
