@@ -14,7 +14,7 @@ import Authentication
 final class Account: KaminoModel {
     
     typealias Public = Account
-    
+
     var id: UUID?
     var name: String
 

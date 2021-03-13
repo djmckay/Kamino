@@ -32,8 +32,8 @@ final class BasicAttendee: KaminoModel {
 
 extension BasicAttendee: Content {}
 extension BasicAttendee {
-    static var createdAtKey: TimestampKey? = \minimalistAttendee.createdAt
-    static var updatedAtKey: TimestampKey? = \minimalistAttendee.updatedAt
+    static var createdAtKey: TimestampKey? = \.minimalistAttendee.createdAt
+    static var updatedAtKey: TimestampKey? = \.minimalistAttendee.updatedAt
 }
 
 extension BasicAttendee: Parameter {}
