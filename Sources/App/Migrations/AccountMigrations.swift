@@ -10,15 +10,16 @@ import Vapor
 import FluentMySQL
 import Authentication
 
-extension Account: Migration {
-    static func prepare(on connection: MySQLConnection) -> Future<Void> {
-        return Database.create(self, on: connection, closure: { (builder) in
-            try addProperties(to: builder)
-            builder.unique(on: \.name)
-        })
-    }
-    
-}
+//extension Account: Migration {
+//        
+//    static func prepare(on connection: MySQLConnection) -> Future<Void> {
+//        return Database.create(self, on: connection, closure: { (builder) in
+//            try addProperties(to: builder)
+//            builder.unique(on: \.name)
+//        })
+//    }
+//    
+//}
 
 //struct MasterAccount: Migration {
 //    static func prepare(on conn: MySQLConnection) -> EventLoopFuture<Void> {

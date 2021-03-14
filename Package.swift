@@ -4,6 +4,9 @@ import PackageDescription
 let package = Package(
     name: "Kamino",
     dependencies: [
+        platforms: [
+            .macOS(.v10_15)
+          ],
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
 
@@ -18,11 +21,17 @@ let package = Package(
     ],
     targets: [
         .target(name: "App", dependencies: [
-                    .product(name: "FluentMySQLDriver", package: "fluent-mysql-driver"),
-                    .product(name: "Vapor", package: "vapor")],
-                SwiftSetting: [.unsafeFlags(["-cross-module-optimization"]
-                                                .when(configuration: .release))
-                ]),
+            .product(name: "Fluent", package: "fluent"),
+            .product(name: "FluentMySQLDriver", package: "fluent-mysql-driver"),
+            .product(name: "Vapor", package: "vapor")
+          ],
+          swiftSettings: [
+            // Enable better optimizations when building in Release configuration. Despite the use of
+            // the `.unsafeFlags` construct required by SwiftPM, this flag is recommended for Release
+            // builds. See <https://github.com/swift-server/guides#building-for-production> for details.
+            .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))
+          ]
+        ),
 //                    "FluentMySQL", "Vapor", "Leaf", "Authentication", "JWT"]),
         .target(name: "Run", dependencies: ["App"]),
         .testTarget(name: "AppTests", dependencies: ["App"])
